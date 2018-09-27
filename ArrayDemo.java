@@ -1,12 +1,15 @@
 public class ArrayDemo {
 
-	public static void printArray(int[]ary) {
-		System.out.print("[");
+	public static String printArray(int[]ary) {
+		String result = "[";
 		for (int i = 0; i < ary.length; i++) {
-			System.out.print(ary[i] + ", ");
+			result = result + ary[i];
+			if (i < ary.length - 1) {
+				result = result + ", ";
+			}
 		}
-		System.out.print("]\n");
-
+		result = result + "]\n";
+		return result;
 	}
 
 	public static void printArray(int[][]ary) {
@@ -17,7 +20,6 @@ public class ArrayDemo {
 			}
 			System.out.print("]\n");
 		}
-
 	}
 
 	public static int countZeros2D(int[][]nums) {
@@ -28,7 +30,6 @@ public class ArrayDemo {
 			}
 		}
 		return result;
-	
 	}
 
 	public static void fill2D(int[][]vals) {
@@ -43,31 +44,21 @@ public class ArrayDemo {
 			}
 		}
 		printArray(vals);
-
 	}
 
 	public static int[][] fill2DCopy(int[][]vals) {
 		return(vals);
-
 	}
 
 	public static void main(String[] args) {
-		printArray(new int[]{1, 2, 3, 4, 5});
-		printArray(new int[][]{
-													{1, 2, 3, 4, 5},
-													{6, 7, 8, 9, 10},
-													{11, 12, 13, 14, 15},
-													});
-		System.out.println(countZeros2D(new int[][]{
-													{1, 0, 3, 0, 5},
-													{6, 7, 0, 0, 0},
-													{11, 0, 13, 14, 15},
-													}));
-		fill2D(new int[][] {
-													{1, 2, 3, 4, 5},
-													{6, 7, 8, 9, 10},
-													{11, 12, 13, 14, 15},
-													});
+		int[][] tester = new int[][]{
+					{1, 0, 3, 0, 5},
+					{6, 7, 0, 0, 0},
+					{11, 0, 13, 14, 15}};
+		System.out.println(printArray(new int[]{1, 2, 3, 4, 5}));
+		printArray(tester);
+		System.out.println(countZeros2D(tester));
+		fill2D(tester);
 
 	}
 
