@@ -10,7 +10,6 @@ public class ArrayDemo {
 	}
 
 	public static void printArray(int[][]ary) {
-		
 		for (int i = 0; i < ary.length; i++) {
 			System.out.print("[");
 			for (int j = 0; j < ary[i].length; j++) {
@@ -18,14 +17,25 @@ public class ArrayDemo {
 			}
 			System.out.print("]\n");
 		}
+
+	}
+
+	public static int countZeros2D(int[][]nums) {
+		int result = 0;
+		for (int i = 0; i < nums.length; i++) {
+			for (int j = 0; j < nums[i].length; j++) {
+				if (nums[i][j] == 0) result++;
+			}
+		}
+		return result;
 	}
 
 	public static void main(String[] args) {
-		printArray(new int[][]{
-													{1, 2, 3, 4, 5},
-													{6, 7, 8, 9, 10},
-													{11, 12, 13, 14, 15},
-													});
+		System.out.println(countZeros2D(new int[][]{
+													{1, 0, 3, 0, 5},
+													{6, 7, 0, 0, 0},
+													{11, 0, 13, 14, 15},
+													}));
 
 	}
 
