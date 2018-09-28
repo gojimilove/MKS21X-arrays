@@ -1,5 +1,6 @@
 public class ArrayDemo {
 
+  // Prints array as a comma-delimited string
 	public static String printArray(int[]ary) {
 		String result = "[";
 		for (int i = 0; i < ary.length; i++) {
